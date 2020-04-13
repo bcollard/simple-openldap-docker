@@ -1,0 +1,62 @@
+version: 1
+
+dn: dc=mycompany,dc=corp
+objectClass: organization
+objectClass: dcObject
+dc: mycompany
+o: mycompanyorg
+description: My Company LDAP
+
+dn: ou=service-accounts,dc=mycompany,dc=corp
+objectClass: top
+objectClass: organizationalUnit
+ou: service-accounts
+
+dn: cn=gravitee-am,ou=service-accounts,dc=mycompany,dc=corp
+objectClass: simpleSecurityObject
+objectClass: top
+objectClass: applicationProcess
+cn: gravitee-am
+userPassword: {SHA}+Llda+q86pyQjyQA/brrGgFjGwM=
+
+dn: ou=groups,dc=mycompany,dc=corp
+objectClass: top
+objectClass: organizationalUnit
+ou: groups
+
+dn: ou=users,dc=mycompany,dc=corp
+objectClass: top
+objectClass: organizationalUnit
+ou: users
+
+dn: mail=john.doe@mycompany.com,ou=users,dc=mycompany,dc=corp
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: DOE, John
+sn: John Doe
+mail: john.doe@mycompany.com
+uid: jdoe
+userPassword: john
+
+dn: mail=jack.smith@mycompany.com,ou=users,dc=mycompany,dc=corp
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+cn: SMITH, Jack
+sn: Jack Smith
+departmentNumber: ONE
+mail: jack.smith@mycompany.com
+telephoneNumber: 0948732684
+uid: jsmith
+userPassword: jack
+
+dn: cn=admins,ou=groups,dc=mycompany,dc=corp
+objectClass: groupOfNames
+objectClass: top
+cn: admins
+member: mail=john.doe@mycompany.com,ou=users,dc=mycompany,dc=corp
+member: mail=jack.smith@mycompany.com,ou=users,dc=mycompany,dc=corp
+
