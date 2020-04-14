@@ -14,7 +14,6 @@ ADD ldif/*.ldif /tmp/ldif/
 EXPOSE 389
 EXPOSE 636
 
-# VOLUME /ssl
 VOLUME /etc/openldap
 VOLUME /var/lib/openldap
 

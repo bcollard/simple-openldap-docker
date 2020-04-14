@@ -20,12 +20,3 @@ chown -R ${USER_ID}.${GROUP_ID} /etc/openldap/ /var/lib/openldap /run/openldap /
 chmod 700 /var/lib/openldap /var/lib/openldap/openldap-data
 
 exec /usr/sbin/slapd -u ${USER_ID} -g ${GROUP_ID} -h "ldap:///" -f /etc/openldap/slapd.conf -F /etc/openldap/ -d 32
-
-
-
-# TLSCipherSuite HIGH:MEDIUM:-SSLv2:-SSLv3
-# TLSCertificateFile /ssl/${DOMAIN}.pem
-# TLSCertificateKeyFile /ssl/${DOMAIN}.key
-# TLSCACertificateFile /ssl/${DOMAIN}-ca.crt
-# apk add ca-certificates +:
-#TLSCACertificatePath /usr/share/ca-certificates/mozilla
